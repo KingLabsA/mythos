@@ -1,0 +1,152 @@
+apiVersion: runpod.ai/v1
+kind: ServerlessEndpoint
+metadata:
+  name: mythos-unhinged-primary
+  labels:
+    project: fable-mythos
+    tier: primary
+spec:
+  gpu:
+    type: "NVIDIA RTX 4090"
+    count: 1
+    memory: 24Gi
+  image:
+    repository: fableforge/mythos-vllm
+    tag: latest
+    pullPolicy: Always
+  env:
+    - name: MODEL_NAME
+      value: "FableForge-AI/mythos-9b-unhinged"
+    - name: SERVED_MODEL_NAME
+      value: "mythos-9b-unhinged"
+    - name: MAX_MODEL_LEN
+      value: "4096"
+    - name: PORT
+      value: "8000"
+    - name: GPU_MEMORY_UTILIZATION
+      value: "0.92"
+    - name: DTYPE
+      value: "auto"
+    - name: HF_TOKEN
+      value: "${HF_TOKEN}"
+  network:
+    port: 8000
+    protocol: HTTP
+  healthCheck:
+    path: /health
+    port: 8000
+    intervalSeconds: 30
+    timeoutSeconds: 10
+    initialDelaySeconds: 120
+  scaling:
+    minWorkers: 1
+    maxWorkers: 4
+    idleTimeoutSeconds: 300
+  volume:
+    mountPath: /models
+    sizeGi: 50
+  resources:
+    cpu: 4
+    memory: 16Gi
+---
+apiVersion: runpod.ai/v1
+kind: ServerlessEndpoint
+metadata:
+  name: mythos-9b-enhanced
+  labels:
+    project: fable-mythos
+    tier: secondary
+spec:
+  gpu:
+    type: "NVIDIA RTX 4090"
+    count: 1
+    memory: 24Gi
+  image:
+    repository: fableforge/mythos-vllm
+    tag: latest
+    pullPolicy: Always
+  env:
+    - name: MODEL_NAME
+      value: "FableForge-AI/mythos-9b-enhanced"
+    - name: SERVED_MODEL_NAME
+      value: "mythos-9b-enhanced"
+    - name: MAX_MODEL_LEN
+      value: "4096"
+    - name: PORT
+      value: "8000"
+    - name: GPU_MEMORY_UTILIZATION
+      value: "0.92"
+    - name: DTYPE
+      value: "auto"
+    - name: HF_TOKEN
+      value: "${HF_TOKEN}"
+  network:
+    port: 8000
+    protocol: HTTP
+  healthCheck:
+    path: /health
+    port: 8000
+    intervalSeconds: 30
+    timeoutSeconds: 10
+    initialDelaySeconds: 120
+  scaling:
+    minWorkers: 0
+    maxWorkers: 2
+    idleTimeoutSeconds: 120
+  volume:
+    mountPath: /models
+    sizeGi: 50
+  resources:
+    cpu: 4
+    memory: 16Gi
+---
+apiVersion: runpod.ai/v1
+kind: ServerlessEndpoint
+metadata:
+  name: shellwhisperer-fast
+  labels:
+    project: fable-mythos
+    tier: fast
+spec:
+  gpu:
+    type: "NVIDIA RTX 4090"
+    count: 1
+    memory: 24Gi
+  image:
+    repository: fableforge/mythos-vllm
+    tag: latest
+    pullPolicy: Always
+  env:
+    - name: MODEL_NAME
+      value: "FableForge-AI/shellwhisperer"
+    - name: SERVED_MODEL_NAME
+      value: "shellwhisperer"
+    - name: MAX_MODEL_LEN
+      value: "4096"
+    - name: PORT
+      value: "8000"
+    - name: GPU_MEMORY_UTILIZATION
+      value: "0.85"
+    - name: DTYPE
+      value: "auto"
+    - name: HF_TOKEN
+      value: "${HF_TOKEN}"
+  network:
+    port: 8000
+    protocol: HTTP
+  healthCheck:
+    path: /health
+    port: 8000
+    intervalSeconds: 30
+    timeoutSeconds: 10
+    initialDelaySeconds: 90
+  scaling:
+    minWorkers: 0
+    maxWorkers: 3
+    idleTimeoutSeconds: 60
+  volume:
+    mountPath: /models
+    sizeGi: 20
+  resources:
+    cpu: 4
+    memory: 16Gi
