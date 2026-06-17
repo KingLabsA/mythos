@@ -37,7 +37,7 @@ ollama run FableForge-AI/mythos-9b-unhinged
 
 **Tool-Use: 5/5** on shell, git, docker, python, API, kubernetes. Timeouts on SQL/regex due to 120s limit.
 
-**Reasoning: 4/5** on logic puzzles (in progress).
+**Reasoning: 2.25/5** — Strong on logic puzzles (4/5) and optimization (5/5); timeouts on code debugging and system design.
 
 ### ShellWhisperer-1.5B — Fast & Focused
 
@@ -65,9 +65,11 @@ Customize any model with your own system prompt and parameters. See [`modelfiles
 
 ## Links
 
-- **HuggingFace:** [King3Djbl/mythos-9b-unhinged](https://huggingface.co/King3Djbl/mythos-9b-unhinged)
+- **HuggingFace:** [mythos-9b-unhinged](https://huggingface.co/King3Djbl/mythos-9b-unhinged) | [mythos-9b-enhanced](https://huggingface.co/King3Djbl/mythos-9b-enhanced) | [mythos-9b-merged](https://huggingface.co/King3Djbl/mythos-9b-merged) | [shellwhisperer-1.5b](https://huggingface.co/King3Djbl/shellwhisperer-1.5b) | [FableForge-AI org](https://huggingface.co/King3Djbl/fableforge-ai)
 - **Ollama:** [FableForge-AI](https://ollama.com/FableForge-AI)
-- **Discord:** Coming soon
+- **GitHub:** [KingLabsA/mythos](https://github.com/KingLabsA/mythos)
+- **Reddit:** [r/LocalLLaMA post](https://www.reddit.com/r/LocalLLaMA/)
+- **X/Twitter:** [@BetterBumsBali](https://x.com/BetterBumsBali)
 
 ## License
 
