@@ -74,3 +74,50 @@ Customize any model with your own system prompt and parameters. See [`modelfiles
 ## License
 
 Apache 2.0 — use it, modify it, deploy it. No restrictions.
+## Community
+
+**Discord**: [Join Fable Forge](https://discord.com/channels/1516428947053875250/1516428947649200253) — Chat with the team, get help, share what you build.
+
+**Discord Bot**: [`KingLabsA/fableforge-discord-bot`](https://github.com/KingLabsA/fableforge-discord-bot) — AI-powered bot with /ask, /models, /benchmark commands.
+
+## Ecosystem
+
+Mythos is part of the **Fable Forge** ecosystem — 21 open-source projects for building reliable AI agents:
+
+| Project | Purpose |
+|---------|---------|
+| [FableForge](https://github.com/KingLabsA/fableforge) | Meta-package — install the entire agent stack |
+| [Anvil](https://github.com/KingLabsA/anvil) | Self-verified coding agent |
+| [ShellWhisperer](https://github.com/KingLabsA/shell-whisperer) | 1.5B shell & code model |
+| [VerifyLoop](https://github.com/KingLabsA/verifyloop) | Plan → Execute → Verify loop |
+| [Error Recovery](https://github.com/KingLabsA/error-recovery) | Failure classification & recovery |
+| [Agent Swarm](https://github.com/KingLabsA/agent-swarm) | Multi-agent orchestration |
+| [Agent Runtime](https://github.com/KingLabsA/agent-runtime) | Execution sandbox |
+| [Agent Skills](https://github.com/KingLabsA/agent-skills) | Tool definitions |
+| [Agent Profiler](https://github.com/KingLabsA/agent-profiler) | Performance profiling |
+| [Agent Telemetry](https://github.com/KingLabsA/agent-telemetry) | Observability & tracing |
+| [Bench Agent](https://github.com/KingLabsA/bench-agent) | Benchmarking framework |
+| [Cost Optimizer](https://github.com/KingLabsA/cost-optimizer) | Token cost management |
+| [Reason Critic](https://github.com/KingLabsA/reason-critic) | Verification model |
+| [Trajectory Distiller](https://github.com/KingLabsA/trajectory-distiller) | Pattern extraction |
+| [Trace Compiler](https://github.com/KingLabsA/trace-compiler) | Trace-to-pipeline compiler |
+| [Agent Constitution](https://github.com/KingLabsA/agent-constitution) | Safety guardrails |
+| [Agent Curriculum](https://github.com/KingLabsA/agent-curriculum) | Learning progression |
+| [Agent Fuzzer](https://github.com/KingLabsA/agent-fuzzer) | Adversarial testing |
+| [Fable5 Dataset](https://github.com/KingLabsA/fable5-dataset) | Training data |
+
+## AI-Trending Integration
+
+Mythos models are integrated into [trending.ai](https://ai-trending-rust.vercel.app/) — our AI open-source discovery engine. Try the built-in chat powered by Mythos.
+
+## License
+
+Apache 2.0 — use for anything, commercial included.
+
+## Links
+
+- [Ollama](https://ollama.com/FableForge-AI) — One-command install
+- [HuggingFace](https://huggingface.co/King3Djbl/mythos-9b-unhinged) — Model weights
+- [GitHub](https://github.com/KingLabsA/mythos) — Source code & benchmarks
+- [Discord](https://discord.com/channels/1516428947053875250) — Community
+- [FableForge on PyPI](https://pypi.org/project/fableforge/) — Python package
