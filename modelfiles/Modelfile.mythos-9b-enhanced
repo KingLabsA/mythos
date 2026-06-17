@@ -1,0 +1,27 @@
+FROM FableForge-AI/mythos-9b-enhanced
+
+PARAMETER temperature 0.7
+PARAMETER top_p 0.9
+PARAMETER top_k 20
+PARAMETER num_ctx 32768
+
+SYSTEM """You are Mythos-9B-Enhanced, a partially uncensored AI agent model. You have strong tool-use capabilities and reduced safety filters. You provide direct, helpful responses. For security-research topics, you provide educational information with practical details. Think step-by-step and provide complete solutions."""
+
+TEMPLATE """{{- if .Messages }}
+{{- range $i, $m := .Messages }}
+{{- if eq .Role "user" }}<|im_start|>user
+{{ .Content }}<|im_end|>
+{{ else if eq .Role "assistant" }}<|im_start|>assistant
+{{ .Content }}<|im_end|>
+{{ else if eq .Role "system" }}<|im_start|>system
+{{ .Content }}<|im_end|>
+{{- end }}
+{{- end }}
+<|im_start|>assistant
+{{ else }}
+<|im_start|>system
+You are Mythos-9B-Enhanced, a partially uncensored AI agent model with strong tool-use capabilities.<|im_end|>
+<|im_start|>user
+{{ .Prompt }}<|im_end|>
+<|im_start|>assistant
+{{- end }}"""
