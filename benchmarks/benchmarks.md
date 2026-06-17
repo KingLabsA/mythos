@@ -34,9 +34,17 @@
 
 ### Reasoning
 
-| Test | Score | Notes |
-|------|-------|-------|
-| Logic puzzle | 4/5 | In progress |
+| Test | Score | Time |
+|------|-------|------|
+| Logic puzzle | 4/5 | 228s |
+| Code debugging | 0/5 | timeout (300s) |
+| System design | 0/5 | timeout (300s) |
+| Optimization | 5/5 | 260s |
+| **Average** | **2.25/5** | |
+
+### Speed: ~3.4 tok/s on M3 Max (Q4_K_M)
+
+> **Note:** Reasoning tests show timeouts at 300s for code_debug and system_design. The model's strength is in censorship resistance and tool-use, not general reasoning puzzles. The `--no_think` mode is recommended for faster responses.
 
 ## ShellWhisperer-1.5B
 
@@ -72,10 +80,12 @@
 
 ### Reasoning
 
-| Test | Score |
-|------|-------|
-| System design | 4/5 |
-| Code debugging | 0/5 |
-| **Average** | **2.5/5** |
+| Test | Score | Time |
+|------|-------|------|
+| Logic puzzle | 3/5 | 12s |
+| Code debugging | 0/5 | 3s |
+| System design | 4/5 | 36s |
+| Optimization | 3/5 | 15s |
+| **Average** | **2.5/5** | |
 
-### Speed: 29 tok/s on M3 Mac (1.5B), ~3.4 tok/s (9B)
+### Speed: 29 tok/s on M3 Max (Q4_K_M)
